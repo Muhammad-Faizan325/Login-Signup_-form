@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Login / Signup</title>
+  </head>
+  <body>
+    <section class="main-container">
+      <div class="form-container">
+        <h2>Sign Up</h2>
+        <label for="firstName" class="field-container"
+          ><i class="fa-solid fa-user"></i
+          ><input type="text" id="firstName" placeholder="First Name"
+        /></label>
+        <label for="lastName" class="field-container"
+          ><i class="fa-solid fa-user"></i
+          ><input type="text" id="lastName" placeholder="Last Name"
+        /></label>
+        <label for="userEmail" class="field-container"
+          ><i class="fa-solid fa-envelope"></i
+          ><input type="email" id="userEmail" placeholder="E-mail"
+        /></label>
+        <label for="password" class="field-container"
+          ><i class="fa-solid fa-lock"></i
+          ><input type="password" id="password" placeholder="Password" /><i
+            class="fa-solid fa-eye"
+            id="showPass"
+            onclick="showPass()"
+          ></i
+        ></label>
+        <button id="signUpBtn" class="btn" onclick="signUp()">Sign Up</button>
+        <p>
+          Don't have an account? <span><a href="./index.html">Login</a></span>
+        </p>
+      </div>
+    </section>
+  </body>
+  <!-- JS File link -->
+  <script src="./assets/app.js"></script>
+</html>
