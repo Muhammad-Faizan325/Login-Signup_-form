@@ -45,4 +45,26 @@ function signUpHandler() {
   }
 }
 
-function loginHandler() {}
+function loginHandler() {
+  var userEmail = document.getElementById("userEmail");
+  var password = document.getElementById("password");
+
+  var getUsers = JSON.parse(localStorage.getItem("users"));
+
+  if (!getUsers) {
+    alert("Invalid email or password");
+    return;
+  }
+
+  for (var userObj of getUsers) {
+    if (
+      userObj.userEmail === userEmail.value &&
+      userObj.password === password.value
+    ) {
+      localStorage.setItem("userLogin", JSON.stringify(userObj));
+      alert("Login Succesfully");
+      return;
+    }
+  }
+  alert("invalid email or password");
+}
