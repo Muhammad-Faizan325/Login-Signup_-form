@@ -9,33 +9,40 @@ function showPass() {
 
 // Sign Up Functionality
 
-function signUp() {
+function signUpHandler() {
   var firstName = document.getElementById("firstName");
   var lastName = document.getElementById("lastName");
   var userEmail = document.getElementById("userEmail");
   var password = document.getElementById("password");
 
-  var userObj = [
-    {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      userEmail: userEmail.value,
-      password: password.value,
-    },
-  ];
+  var userObj = {
+    firstName: firstName.value,
+    lastName: lastName.value,
+    userEmail: userEmail.value,
+    password: password.value,
+  };
 
-  var users = localStorage.getItem("users");
+  var getUsers = localStorage.getItem("users");
 
-  if (!users) {
+  if (!getUsers) {
     var arr = [userObj];
     localStorage.setItem("users", JSON.stringify(arr));
+    alert("user Succesfully Signup");
+    window.location.href = "./index.html";
   } else {
-    var usersArr = JSON.parse(users);
+    var usersArr = JSON.parse(getUsers);
 
     for (var i = 0; i < usersArr.length; i++) {
-      if (userObj.email === usersArr[i].email) {
+      if (userObj.userEmail === usersArr[i].userEmail) {
         alert("Email Already exist");
+        return;
       }
     }
+    usersArr.push(userObj);
+    localStorage.setItem("users", JSON.stringify(usersArr));
+    alert("user Succesfully Signup");
+    window.location.href = "./index.html";
   }
 }
+
+function loginHandler() {}
